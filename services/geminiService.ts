@@ -1,7 +1,8 @@
 import { GoogleGenAI } from "@google/genai";
 
-const apiKey = process.env.API_KEY || '';
+const apiKey = process.env.API_KEY || 'demo-key-not-configured';
 const ai = new GoogleGenAI({ apiKey });
+export const isGeminiConfigured = !!process.env.API_KEY;
 
 export const generateQuestionnaire = async (projectType: string, startNumber: number = 1): Promise<string> => {
   try {

@@ -1,0 +1,5 @@
+{
+  "name": "Pergunta Certa",
+  "description": "AI-powered client onboarding questionnaire generator using Gemini",
+  "requestFramePermissions": []
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="dark">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Onboarding AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    }
+
+    .material-symbols-filled {
+      font-variation-settings: "FILL" 1, "wght" 600, "GRAD" 0, "opsz" 24;
+    }
+
+    body {
+      min-height: 100vh;
+      /* fallback */
+      min-height: 100dvh;
+    }
+
+    /* Custom Scrollbar for Textarea */
+    textarea::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    textarea::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    textarea::-webkit-scrollbar-thumb {
+      background-color: #cbd5e1;
+      border-radius: 4px;
+    }
+
+    .dark textarea::-webkit-scrollbar-thumb {
+      background-color: #334155;
+    }
+
+    /* Efeito de brilho no balão do logo */
+    .glossy-bubble {
+      background: linear-gradient(135deg, #4facfe 0%, #137fec 100%);
+      box-shadow: inset 2px 2px 5px rgba(255, 255, 255, 0.4),
+        inset -2px -2px 5px rgba(0, 0, 0, 0.1),
+        5px 5px 15px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.10.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1"
+  }
+}
+</script>
+  <link rel="stylesheet" href="/output.css">
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-stone-900 dark:text-white">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
+</html>

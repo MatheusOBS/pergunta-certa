@@ -1,0 +1,6 @@
+/* Test CSS - no Tailwind */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}

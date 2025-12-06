@@ -1,20 +1,47 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Pergunta Certa
 
-# Run and deploy your AI Studio app
+**Pergunta Certa** é uma plataforma SaaS inovadora projetada para otimizar o processo de onboarding de clientes através de questionários inteligentes.
 
-This contains everything you need to run your app locally.
+Desenvolvido por **Matheus Oliveira Barbosa Santos**.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1zdPA7k17YqnQvbAMNkKRG9cwoWiLTs7a
+## 🚀 Funcionalidades
 
-## Run Locally
+-   **Questionários Dinâmicos**: Criação de formulários personalizados para cada tipo de cliente.
+-   **Integração com WhatsApp**: Envio e recebimento de respostas diretamente pelo WhatsApp.
+-   **Dashboard Analítico**: Visualização clara de métricas e insights sobre os clientes.
+-   **Gestão de Assinaturas**: Integração completa com Stripe para planos e pagamentos.
+-   **Banco de Dados Seguro**: Armazenamento robusto e escalável com Supabase.
 
-**Prerequisites:**  Node.js
+## 🛠️ Tecnologias Utilizadas
 
+-   **Frontend**: React, Vite, Tailwind CSS, Framer Motion
+-   **Backend/Database**: Supabase
+-   **Pagamentos**: Stripe
+-   **Linguagem**: TypeScript
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 📦 Instalação e Uso
+
+Pré-requisitos: Node.js instalado.
+
+1.  **Clone o repositório:**
+    ```bash
+    git clone https://github.com/MatheusOBS/pergunta-certa.git
+    cd pergunta-certa
+    ```
+
+2.  **Instale as dependências:**
+    ```bash
+    npm install
+    ```
+
+3.  **Configure as variáveis de ambiente:**
+    Crie um arquivo `.env` na raiz do projeto e adicione suas chaves (Supabase, Stripe, etc.).
+
+4.  **Inicie o servidor de desenvolvimento:**
+    ```bash
+    npm run dev
+    ```
+
+## 📄 Licença
+
+Todos os direitos reservados a Matheus Oliveira Barbosa Santos.

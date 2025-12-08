@@ -25,7 +25,7 @@ export const HistoryProvider: React.FC<{ children: React.ReactNode }> = ({ child
   const { user } = useAuth();
 
   const fetchHistory = async () => {
-    if (!user) return;
+    if (!user || !supabase) return;
     const { data, error } = await supabase
       .from('history')
       .select('*')
@@ -47,7 +47,7 @@ export const HistoryProvider: React.FC<{ children: React.ReactNode }> = ({ child
   }, [user]);
 
   const addHistoryItem = async (newItem: Omit<HistoryItem, 'id' | 'user_id' | 'created_at'>) => {
-    if (!user) return;
+    if (!user || !supabase) return;
 
     const { data, error } = await supabase
       .from('history')
@@ -63,6 +63,7 @@ export const HistoryProvider: React.FC<{ children: React.ReactNode }> = ({ child
   };
 
   const removeHistoryItem = async (id: string) => {
+    if (!supabase) return;
     const { error } = await supabase
       .from('history')
       .delete()

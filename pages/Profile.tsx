@@ -23,6 +23,7 @@ const Profile: React.FC = () => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    if (!supabase) return;
     const { error } = await supabase.auth.signInWithOtp({ email });
     if (error) {
       setMessage(error.message);
@@ -33,6 +34,7 @@ const Profile: React.FC = () => {
   };
 
   const handleLogout = async () => {
+    if (!supabase) return;
     await supabase.auth.signOut();
   };
 

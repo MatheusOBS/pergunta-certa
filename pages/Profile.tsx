@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { User, LogOut, Moon, Sun, Mail } from 'lucide-react';
-import { useAuth } from '../App';
+import { useAuth } from '../contexts/AuthContext';
 import { supabase } from '../services/supabase';
 import { motion } from 'framer-motion';
 
@@ -23,6 +23,7 @@ const Profile: React.FC = () => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    if (!supabase) return;
     const { error } = await supabase.auth.signInWithOtp({ email });
     if (error) {
       setMessage(error.message);
@@ -33,6 +34,7 @@ const Profile: React.FC = () => {
   };
 
   const handleLogout = async () => {
+    if (!supabase) return;
     await supabase.auth.signOut();
   };
 

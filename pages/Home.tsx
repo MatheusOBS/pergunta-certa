@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { generateQuestionnaire } from '../services/geminiService';
-import { useHistory, useAuth } from '../App';
+import { useHistory } from '../contexts/HistoryContext';
+import { useAuth } from '../contexts/AuthContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { supabase } from '../services/supabase';
+import LoadingSpinner from '../components/LoadingSpinner';
+import ToastNotification from '../components/ToastNotification';
 
 // Componente do Logo CSS Puro
 const AppLogo = () => (
@@ -172,9 +175,7 @@ const Home: React.FC = () => {
             <p className="text-base font-medium text-stone-700 dark:text-stone-300">
               {hasGenerated ? 'Pensando em mais perguntas...' : 'Analisando seu projeto...'}
             </p>
-            <div className="relative h-2 w-full max-w-xs overflow-hidden rounded-full bg-stone-100 dark:bg-[#233648]">
-              <div className="absolute h-full w-1/3 animate-[progress_1s_ease-in-out_infinite] rounded-full bg-accent"></div>
-            </div>
+            <LoadingSpinner />
           </div>
         )}
 
@@ -227,12 +228,11 @@ const Home: React.FC = () => {
       </div>
 
       {/* Toast Notification */}
-      {showToast && (
-        <div className="fixed bottom-24 left-1/2 z-50 flex -translate-x-1/2 transform items-center gap-3 rounded-full bg-stone-900/95 px-6 py-3 text-white shadow-xl backdrop-blur-sm dark:bg-white/95 dark:text-stone-900 animate-[fadeIn_0.3s_ease-out]">
-          <span className="material-symbols-outlined text-green-400 dark:text-green-600">check_circle</span>
-          <p className="text-sm font-bold">Salvo com sucesso!</p>
-        </div>
-      )}
+      <ToastNotification
+        message="Salvo com sucesso!"
+        show={showToast}
+        onClose={() => setShowToast(false)}
+      />
     </motion.div>
   );
 };

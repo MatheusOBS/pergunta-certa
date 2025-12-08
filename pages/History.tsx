@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory } from '../App';
+import { useHistory } from '../contexts/HistoryContext';
 import { Trash2, Clock } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { User, LogOut, Moon, Sun, Mail } from 'lucide-react';
-import { useAuth } from '../App';
+import { useAuth } from '../contexts/AuthContext';
 import { supabase } from '../services/supabase';
 import { motion } from 'framer-motion';
 

@@ -1,12 +1,12 @@
 import { GoogleGenAI } from "@google/genai";
 
-const apiKey = process.env.API_KEY || 'demo-key-not-configured';
+const apiKey = process.env.GEMINI_API_KEY || 'demo-key-not-configured';
 const ai = new GoogleGenAI({ apiKey });
-export const isGeminiConfigured = !!process.env.API_KEY;
+export const isGeminiConfigured = !!process.env.GEMINI_API_KEY;
 
 export const generateQuestionnaire = async (projectType: string, startNumber: number = 1): Promise<string> => {
   try {
-    const model = 'gemini-2.5-flash';
+    const model = 'gemini-2.0-flash-exp';
     
     // Engenharia de Prompt Avançada para maximizar a qualidade e utilidade das perguntas
     const prompt = `
